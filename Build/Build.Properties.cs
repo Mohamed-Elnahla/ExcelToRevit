@@ -1,5 +1,10 @@
 partial class Build
 {
+    readonly string[] Projects =
+    {
+        "Elnahla.ExcelToRevit"
+    };
+
     public const string InstallerProject = "Installer";
 
     public const string BuildConfiguration = "Release";
@@ -7,9 +12,4 @@ partial class Build
 
     const string AddInBinPrefix = "AddIn";
     const string ArtifactsFolder = "output";
-
-    readonly string[] Projects =
-    {
-        "ExcelToRevit"
-    };
 }

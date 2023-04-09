@@ -9,8 +9,8 @@ using WixSharp.CommonTasks;
 using WixSharp.Controls;
 
 const string installationDir = @"%AppDataFolder%\Autodesk\Revit\Addins\";
-const string projectName = "ExcelToRevit";
-const string outputName = "ExcelToRevit";
+const string projectName = "Elnahla.ExcelToRevit";
+const string outputName = "Elnahla.ExcelToRevit";
 const string outputDir = "output";
 const string version = "1.0.0";
 
@@ -27,7 +27,7 @@ var project = new Project
     OutFileName = fileName.ToString(),
     InstallScope = InstallScope.perUser,
     MajorUpgrade = MajorUpgrade.Default,
-    GUID = new Guid("B3933B16-4CE8-4AA3-9E6B-F2E7B704891F"),
+    GUID = new Guid("152ECA77-EB75-4231-87A4-C4D93D22DD0B"),
     BannerImage = @"Installer\Resources\Icons\BannerImage.png",
     BackgroundImage = @"Installer\Resources\Icons\BackgroundImage.png",
     ControlPanelInfo =
@@ -57,7 +57,7 @@ WixEntity[] GenerateWixEntities()
         if (versionStorages.ContainsKey(fileVersion))
             versionStorages[fileVersion].Add(files);
         else
-            versionStorages.Add(fileVersion, new List<WixEntity> { files });
+            versionStorages.Add(fileVersion, new List<WixEntity> {files});
 
         var assemblies = Directory.GetFiles(directory, "*", SearchOption.AllDirectories);
         Console.WriteLine($"Added '{fileVersion}' version files: ");

@@ -3,61 +3,62 @@ using System.Windows;
 using System.Windows.Data;
 using System.Windows.Markup;
 
-namespace Elnahla.ExcelToRevit.ViewModels.Converters;
-
-[ValueConversion(typeof(bool), typeof(Visibility))]
-public class BoolVisibilityConverter : MarkupExtension, IValueConverter
+namespace Elnahla.ExcelToRevit.ViewModels.Converters
 {
-    public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
+    [ValueConversion(typeof(bool), typeof(Visibility))]
+    public class BoolVisibilityConverter : MarkupExtension, IValueConverter
     {
-        return (bool)value! ? Visibility.Visible : Visibility.Hidden;
+        public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
+        {
+            return (bool)value! ? Visibility.Visible : Visibility.Hidden;
+        }
+
+        public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
+        {
+            return (Visibility)value! == Visibility.Visible;
+        }
+
+        public override object ProvideValue(IServiceProvider serviceProvider)
+        {
+            return this;
+        }
     }
 
-    public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
+    [ValueConversion(typeof(bool), typeof(Visibility))]
+    public class InverseBoolVisibilityConverter : MarkupExtension, IValueConverter
     {
-        return (Visibility)value! == Visibility.Visible;
+        public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
+        {
+            return (bool)value! == false ? Visibility.Visible : Visibility.Hidden;
+        }
+
+        public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
+        {
+            return (Visibility)value! != Visibility.Visible;
+        }
+
+        public override object ProvideValue(IServiceProvider serviceProvider)
+        {
+            return this;
+        }
     }
 
-    public override object ProvideValue(IServiceProvider serviceProvider)
+    [ValueConversion(typeof(bool), typeof(bool))]
+    public class InverseBooleanConverter : MarkupExtension, IValueConverter
     {
-        return this;
-    }
-}
+        public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
+        {
+            return !(bool)value!;
+        }
 
-[ValueConversion(typeof(bool), typeof(Visibility))]
-public class InverseBoolVisibilityConverter : MarkupExtension, IValueConverter
-{
-    public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
-    {
-        return (bool)value! == false ? Visibility.Visible : Visibility.Hidden;
-    }
+        public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
+        {
+            return !(bool)value!;
+        }
 
-    public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
-    {
-        return (Visibility)value! != Visibility.Visible;
-    }
-
-    public override object ProvideValue(IServiceProvider serviceProvider)
-    {
-        return this;
-    }
-}
-
-[ValueConversion(typeof(bool), typeof(bool))]
-public class InverseBooleanConverter : MarkupExtension, IValueConverter
-{
-    public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
-    {
-        return !(bool)value!;
-    }
-
-    public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
-    {
-        return !(bool)value!;
-    }
-
-    public override object ProvideValue(IServiceProvider serviceProvider)
-    {
-        return this;
+        public override object ProvideValue(IServiceProvider serviceProvider)
+        {
+            return this;
+        }
     }
 }

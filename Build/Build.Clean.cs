@@ -14,7 +14,7 @@ partial class Build
             foreach (var projectName in Projects)
             {
                 var project = BuilderExtensions.GetProject(Solution, projectName);
-                var binDirectory = (AbsolutePath)new DirectoryInfo(project.GetBinDirectory()).FullName;
+                var binDirectory = (AbsolutePath) new DirectoryInfo(project.GetBinDirectory()).FullName;
                 binDirectory.GlobDirectories($"{AddInBinPrefix}*", "Release*").ForEach(DeleteDirectory);
             }
         });

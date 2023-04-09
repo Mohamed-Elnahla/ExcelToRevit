@@ -9,16 +9,13 @@ static class BuilderExtensions
 
     public static AbsolutePath GetBinDirectory(this Project project) => project.Directory / "bin";
 
-    static AbsolutePath GetExePath(this Project project, string configuration) =>
-        project.GetBinDirectory() / configuration / $"{project.Name}.exe";
+    static AbsolutePath GetExePath(this Project project, string configuration) => project.GetBinDirectory() / configuration / $"{project.Name}.exe";
 
-    public static AbsolutePath GetExecutableFile(this Project project, IEnumerable<string> configurations,
-        List<DirectoryInfo> directories)
+    public static AbsolutePath GetExecutableFile(this Project project, IEnumerable<string> configurations, List<DirectoryInfo> directories)
     {
         var directory = directories[0].Name;
         var subConfigRegex = new Regex(@"R\d+$");
-        foreach (var subCategory in configurations.Select(configuration =>
-                     configuration.Replace(Build.InstallerConfiguration, "")))
+        foreach (var subCategory in configurations.Select(configuration => configuration.Replace(Build.InstallerConfiguration, "")))
             if (string.IsNullOrEmpty(subCategory))
             {
                 if (!string.IsNullOrEmpty(subConfigRegex.Match(directory).Value))
