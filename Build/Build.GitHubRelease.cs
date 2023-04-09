@@ -81,7 +81,8 @@ partial class Build
     static async Task CheckTagsAsync(string gitHubOwner, string gitHubName, string version)
     {
         var gitHubTags = await GitHubTasks.GitHubClient.Repository.GetAllTags(gitHubOwner, gitHubName);
-        if (gitHubTags.Select(tag => tag.Name).Contains(version)) throw new ArgumentException($"The repository already contains a Release with the tag: {version}");
+        if (gitHubTags.Select(tag => tag.Name).Contains(version))
+            throw new ArgumentException($"The repository already contains a Release with the tag: {version}");
     }
 
     string GetProductVersion(IEnumerable<string> artifacts)
@@ -102,7 +103,8 @@ partial class Build
             }
         }
 
-        if (stringVersion.Equals(string.Empty)) throw new ArgumentException("Could not determine product version from artifacts.");
+        if (stringVersion.Equals(string.Empty))
+            throw new ArgumentException("Could not determine product version from artifacts.");
 
         return stringVersion;
     }
@@ -127,5 +129,6 @@ partial class Build
         await GitHubTasks.GitHubClient.Repository.Release.Create(gitHubOwner, gitHubName, newRelease);
 
     static async Task ReleaseDraftAsync(string gitHubOwner, string gitHubName, Release draft) =>
-        await GitHubTasks.GitHubClient.Repository.Release.Edit(gitHubOwner, gitHubName, draft.Id, new ReleaseUpdate {Draft = false});
+        await GitHubTasks.GitHubClient.Repository.Release.Edit(gitHubOwner, gitHubName, draft.Id,
+            new ReleaseUpdate { Draft = false });
 }

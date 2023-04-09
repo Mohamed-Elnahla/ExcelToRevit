@@ -53,22 +53,57 @@
         <StartProgram>C:\Program Files\Autodesk\Revit $(RevitVersion)\Revit.exe</StartProgram>
         <StartArguments>/language ENG</StartArguments>
     </PropertyGroup>
+    <ItemGroup>
+        <None Remove="Resources\About.bmp"/>
+        <None Remove="Resources\Beams.bmp"/>
+        <None Remove="Resources\C_Columns.bmp"/>
+        <None Remove="Resources\Excel.bmp"/>
+        <None Remove="Resources\Family.bmp"/>
+        <None Remove="Resources\Layout_Sheet.bmp"/>
+        <None Remove="Resources\Level.bmp"/>
+        <None Remove="Resources\PC_Isolated_Footings.bmp"/>
+        <None Remove="Resources\PC_Slab.bmp"/>
+        <None Remove="Resources\Piles.bmp"/>
+        <None Remove="Resources\Place.bmp"/>
+        <None Remove="Resources\RC_Isolated_Footings.bmp"/>
+        <None Remove="Resources\RC_Slab.bmp"/>
+        <None Remove="Resources\Structural_Floor.bmp"/>
+        <None Remove="Resources\Wall.bmp"/>
+    </ItemGroup>
+    <ItemGroup>
+        <EmbeddedResource Include="Resources\About.bmp"/>
+        <EmbeddedResource Include="Resources\Beams.bmp"/>
+        <EmbeddedResource Include="Resources\C_Columns.bmp"/>
+        <EmbeddedResource Include="Resources\Excel.bmp"/>
+        <EmbeddedResource Include="Resources\Family.bmp"/>
+        <EmbeddedResource Include="Resources\Layout_Sheet.bmp"/>
+        <EmbeddedResource Include="Resources\Level.bmp"/>
+        <EmbeddedResource Include="Resources\PC_Isolated_Footings.bmp"/>
+        <EmbeddedResource Include="Resources\PC_Slab.bmp"/>
+        <EmbeddedResource Include="Resources\Piles.bmp"/>
+        <EmbeddedResource Include="Resources\Place.bmp"/>
+        <EmbeddedResource Include="Resources\RC_Isolated_Footings.bmp"/>
+        <EmbeddedResource Include="Resources\RC_Slab.bmp"/>
+        <EmbeddedResource Include="Resources\Structural_Floor.bmp"/>
+        <EmbeddedResource Include="Resources\Wall.bmp"/>
+    </ItemGroup>
 
     <ItemGroup>
-        <PackageReference Include="Nice3point.Revit.Toolkit" Version="$(RevitVersion).*" />
-        <PackageReference Include="Nice3point.Revit.Extensions" Version="$(RevitVersion).*" />
-        <PackageReference Include="Nice3point.Revit.Api.RevitAPI" Version="$(RevitVersion).*-*" />
-        <PackageReference Include="Nice3point.Revit.Api.RevitAPIUI" Version="$(RevitVersion).*-*" />
-        <PackageReference Include="CommunityToolkit.Mvvm" Version="8.*" />
+        <PackageReference Include="EPPlus" Version="4.5.3.3"/>
+        <PackageReference Include="Nice3point.Revit.Toolkit" Version="$(RevitVersion).*"/>
+        <PackageReference Include="Nice3point.Revit.Extensions" Version="$(RevitVersion).*"/>
+        <PackageReference Include="Nice3point.Revit.Api.RevitAPI" Version="$(RevitVersion).*-*"/>
+        <PackageReference Include="Nice3point.Revit.Api.RevitAPIUI" Version="$(RevitVersion).*-*"/>
+        <PackageReference Include="CommunityToolkit.Mvvm" Version="8.*"/>
         <PackageReference Include="Serilog" Version="2.*"/>
         <PackageReference Include="Serilog.Sinks.Debug" Version="2.*"/>
     </ItemGroup>
 
     <ItemGroup>
-        <Using Include="Nice3point.Revit.Extensions" />
-        <Using Include="Nice3point.Revit.Toolkit.Utils" />
-        <Using Include="JetBrains.Annotations" />
-        <Using Include="Serilog" />
+        <Using Include="Nice3point.Revit.Extensions"/>
+        <Using Include="Nice3point.Revit.Toolkit.Utils"/>
+        <Using Include="JetBrains.Annotations"/>
+        <Using Include="Serilog"/>
     </ItemGroup>
 
     <ItemGroup>
@@ -77,13 +112,17 @@
     </ItemGroup>
 
     <ItemGroup>
-        <Folder Include="ViewModels\Objects" />
+        <Folder Include="ViewModels\Objects"/>
+    </ItemGroup>
+
+    <ItemGroup>
+        <Reference Include="System.Windows.Forms"/>
     </ItemGroup>
 
     <Target Name="CopyFiles" AfterTargets="CoreBuild">
         <ItemGroup>
-            <RootItem Include="$(ProjectDir)*.addin" />
-            <AddinItem Include="$(TargetDir)*" />
+            <RootItem Include="$(ProjectDir)*.addin"/>
+            <AddinItem Include="$(TargetDir)*"/>
         </ItemGroup>
 
         <PropertyGroup>
@@ -91,15 +130,13 @@
             <AddinDir>$(RootDir)$(AssemblyName)\</AddinDir>
         </PropertyGroup>
 
-        <Copy SourceFiles="@(RootItem)" DestinationFolder="$(RootDir)" />
-        <Copy SourceFiles="@(AddinItem)" DestinationFolder="$(AddinDir)" />
+        <Copy SourceFiles="@(RootItem)" DestinationFolder="$(RootDir)"/>
+        <Copy SourceFiles="@(AddinItem)" DestinationFolder="$(AddinDir)"/>
 
         <ItemGroup>
-            <AddinFiles Include="$(RootDir)**\*.*" />
+            <AddinFiles Include="$(RootDir)**\*.*"/>
         </ItemGroup>
 
-        <Copy SourceFiles="@(AddinFiles)"
-              DestinationFolder="$(AppData)\Autodesk\Revit\Addins\$(RevitVersion)\%(RecursiveDir)"
-              Condition="$(Configuration.Contains('Debug'))" />
+        <Copy SourceFiles="@(AddinFiles)" DestinationFolder="$(AppData)\Autodesk\Revit\Addins\$(RevitVersion)\%(RecursiveDir)" Condition="$(Configuration.Contains('Debug'))"/>
     </Target>
 </Project>

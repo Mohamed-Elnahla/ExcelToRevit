@@ -24,7 +24,9 @@ partial class Build : NukeBuild
                 return s.Remove(platformIndex);
             })
             .ToList();
-        if (configurations.Count == 0) throw new Exception($"Can't find configurations in the solution by patterns: {string.Join(" | ", startPatterns)}.");
+        if (configurations.Count == 0)
+            throw new Exception(
+                $"Can't find configurations in the solution by patterns: {string.Join(" | ", startPatterns)}.");
         return configurations;
     }
 
@@ -38,7 +40,8 @@ partial class Build : NukeBuild
             directories.AddRange(directoryInfo);
         }
 
-        if (directories.Count == 0) throw new Exception("There are no packaged assemblies in the project. Try to build the project again.");
+        if (directories.Count == 0)
+            throw new Exception("There are no packaged assemblies in the project. Try to build the project again.");
 
         var versionRegex = new Regex(@"^.*R\d+ ?");
         var addInsDirectory = directories
