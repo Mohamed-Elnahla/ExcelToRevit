@@ -1,7 +1,7 @@
 ﻿<RevitAddIns>
   <AddIn Type="Application">
     <Name>Elnahla.ExcelToRevit</Name>
-    <Assembly>Elnahla.ExcelToRevit\Elnahla.ExcelToRevit.dll</Assembly>
+    <Assembly>Elnahla.ExcelToRevit/Elnahla.ExcelToRevit.dll</Assembly>
     <AddInId>
       0C9D711E-26C9-4BA6-96E0-EE95AADBDB4B
     </AddInId>
