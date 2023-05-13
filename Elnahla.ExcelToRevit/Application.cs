@@ -5,6 +5,7 @@ using Serilog.Events;
 using System.Reflection;
 using System.Windows.Media.Imaging;
 using System.Windows.Media;
+using System.Windows.Forms;
 
 namespace Elnahla.ExcelToRevit
 {
@@ -15,6 +16,7 @@ namespace Elnahla.ExcelToRevit
         {
             CreateLogger();
             CreateRibbon();
+
         }
 
         public override void OnShutdown()
@@ -27,12 +29,12 @@ namespace Elnahla.ExcelToRevit
             //Create Ribbon Tab
             Application.CreateRibbonTab("Elnahla");
 
-            //Creating Panels
-            var P_Levels = Application.CreateRibbonPanel("Elnahla", "Levels");
-            var P_Families = Application.CreateRibbonPanel("Elnahla", "Create Family Types");
-            var P_Place = Application.CreateRibbonPanel("Elnahla", "Place Elements");
-
-            var P_About = Application.CreateRibbonPanel("Elnahla", "About");
+            //Creating Panel
+            var P_ExcelToRevit = Application.CreateRibbonPanel("Elnahla", "Excel To Revit");
+            //var P_Levels = Application.CreateRibbonPanel("Elnahla", "Levels");
+            //var P_Families = Application.CreateRibbonPanel("Elnahla", "Create Family Types");
+            //var P_Place = Application.CreateRibbonPanel("Elnahla", "Place Elements");
+            //var P_About = Application.CreateRibbonPanel("Elnahla", "About");
 
             //Creating Buttons
             var path = Assembly.GetExecutingAssembly().Location;
@@ -67,7 +69,7 @@ namespace Elnahla.ExcelToRevit
                 new PushButtonData("B_P_Columns", "Columns", path, "Elnahla.ExcelToRevit.Commands.ColumnsPlacing");
             var D_B_P_Walls = new PushButtonData("B_P_Walls", "Walls", path, "Elnahla.ExcelToRevit.Commands.WallsPlacing");
             var D_B_P_Beams = new PushButtonData("B_F_Beams", "Beams", path, "Elnahla.ExcelToRevit.Commands.BeamsPlacing");
-            var D_B_Excel_Location = new PushButtonData("B_Excel_Familes", "Placing Elemnets\r\nExcel Files", path,
+            var D_B_Excel_Location = new PushButtonData("B_PExcel_Familes", "Placing Elemnets\r\nExcel Files", path,
                 "Elnahla.ExcelToRevit.Commands.ExcelLocation");
             var D_B_About = new PushButtonData("B_About", "About", path, "Elnahla.ExcelToRevit.Commands.AboutCommand");
 
@@ -84,7 +86,6 @@ namespace Elnahla.ExcelToRevit
             D_B_F_Beams.LargeImage = BmpImageSource("Elnahla.ExcelToRevit.Resources.Beams.bmp");
             D_B_F_StrFloors.LargeImage = BmpImageSource("Elnahla.ExcelToRevit.Resources.Structural_Floor.bmp");
             D_B_F_TitleBlocks.LargeImage = BmpImageSource("Elnahla.ExcelToRevit.Resources.Layout_Sheet.bmp");
-            D_B_Excel_Familes.LargeImage = BmpImageSource("Elnahla.ExcelToRevit.Resources.Excel.bmp");
             D_Place.LargeImage = BmpImageSource("Elnahla.ExcelToRevit.Resources.Place.bmp");
             D_B_P_Piles.LargeImage = BmpImageSource("Elnahla.ExcelToRevit.Resources.Piles.bmp");
             D_B_P_PC_Isolated_Footings.LargeImage = BmpImageSource("Elnahla.ExcelToRevit.Resources.PC_Isolated_Footings.bmp");
@@ -92,16 +93,22 @@ namespace Elnahla.ExcelToRevit
             D_B_P_Columns.LargeImage = BmpImageSource("Elnahla.ExcelToRevit.Resources.C_Columns.bmp");
             D_B_P_Walls.LargeImage = BmpImageSource("Elnahla.ExcelToRevit.Resources.Wall.bmp");
             D_B_P_Beams.LargeImage = BmpImageSource("Elnahla.ExcelToRevit.Resources.Beams.bmp");
+
+            //stacked buttons
+            D_B_Excel_Familes.LargeImage = BmpImageSource("Elnahla.ExcelToRevit.Resources.Excel.bmp");
             D_B_Excel_Location.LargeImage = BmpImageSource("Elnahla.ExcelToRevit.Resources.Excel.bmp");
             D_B_About.LargeImage = BmpImageSource("Elnahla.ExcelToRevit.Resources.About.bmp");
-
+            //D_B_Excel_Familes.Image = BmpImageSource("Elnahla.ExcelToRevit.Resources.Excel.bmp");
+            //D_B_Excel_Location.Image = BmpImageSource("Elnahla.ExcelToRevit.Resources.Excel.bmp");
+            //D_B_About.Image = BmpImageSource("Elnahla.ExcelToRevit.Resources.About.bmp");
 
             //Place Buttons Into Panels
             //-------------------------
-            //Buttons in Levels Panel
-            var B_CLevels = P_Levels.AddItem(D_B_CLevels) as PushButton;
-            //Buttons in Create Family Types Panel
-            var Create_Family_Types = P_Families.AddItem(D_Create_Family_Types) as PulldownButton;
+            //Create Levels Button
+            var B_CLevels = P_ExcelToRevit.AddItem(D_B_CLevels) as PushButton;
+
+            //Create Family Types Button
+            var Create_Family_Types = P_ExcelToRevit.AddItem(D_Create_Family_Types) as PulldownButton;
             Create_Family_Types.AddPushButton(D_B_F_Piles);
             Create_Family_Types.AddPushButton(D_B_F_PC_Isolated_Footings);
             Create_Family_Types.AddPushButton(D_B_F_RC_Isolated_Footings);
@@ -111,10 +118,10 @@ namespace Elnahla.ExcelToRevit
             Create_Family_Types.AddPushButton(D_B_F_Beams);
             Create_Family_Types.AddPushButton(D_B_F_StrFloors);
             Create_Family_Types.AddPushButton(D_B_F_TitleBlocks);
-            var B_Excel_Familes = P_Families.AddItem(D_B_Excel_Familes) as PushButton;
+            
 
-            //Buttons in Placing Elements Panel
-            var Place_Elements = P_Place.AddItem(D_Place) as PulldownButton;
+            //Placing Elements Button
+            var Place_Elements = P_ExcelToRevit.AddItem(D_Place) as PulldownButton;
             Place_Elements.AddPushButton(D_B_P_Piles);
             Place_Elements.AddPushButton(D_B_P_PC_Isolated_Footings);
             Place_Elements.AddPushButton(D_B_P_RC_Isolated_Footings);
@@ -122,14 +129,14 @@ namespace Elnahla.ExcelToRevit
             Place_Elements.AddPushButton(D_B_P_Beams);
             Place_Elements.AddPushButton(D_B_P_Walls);
 
-            var B_Excel_Location = P_Place.AddItem(D_B_Excel_Location) as PushButton;
-
-
-            //Buttons in About Panel
-            var B_About = P_About.AddItem(D_B_About) as PushButton;
+            //Stacked Panel
+            IList<RibbonItem> ribbonItem = P_ExcelToRevit.AddStackedItems(D_B_Excel_Familes, D_B_Excel_Location, D_B_About);
+            //var B_Excel_Familes = P_ExcelToRevit.AddItem(D_B_Excel_Familes) as PushButton;
+            //var B_Excel_Location = P_ExcelToRevit.AddItem(D_B_Excel_Location) as PushButton;
+            //var B_About = P_ExcelToRevit.AddItem(D_B_About) as PushButton;
         }
 
-        private static void CreateLogger()
+        public static void CreateLogger()
         {
             const string outputTemplate = "{Timestamp:yyyy-MM-dd HH:mm:ss} [{Level:u3}] {Message:lj}{NewLine}{Exception}";
 

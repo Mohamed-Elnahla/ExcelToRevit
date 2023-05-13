@@ -12,7 +12,7 @@ const string installationDir = @"%AppDataFolder%\Autodesk\Revit\Addins\";
 const string projectName = "Elnahla.ExcelToRevit";
 const string outputName = "Elnahla.ExcelToRevit";
 const string outputDir = "output";
-const string version = "1.0.0";
+const string version = "1.0.1";
 
 var fileName = new StringBuilder().Append(outputName).Append("-").Append(version);
 //Additional suffixes for unique configurations add here
@@ -32,7 +32,7 @@ var project = new Project
     BackgroundImage = @"Installer\Resources\Icons\BackgroundImage.png",
     ControlPanelInfo =
     {
-        Manufacturer = Environment.UserName,
+        Manufacturer = "Eng. Mohamed Elnahla",
         ProductIcon = @"Installer\Resources\Icons\ShellIcon.ico"
     },
     Dirs = new Dir[]

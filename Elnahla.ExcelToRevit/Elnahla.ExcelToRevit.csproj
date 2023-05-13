@@ -123,11 +123,17 @@
         <ItemGroup>
             <RootItem Include="$(ProjectDir)*.addin" />
             <AddinItem Include="$(TargetDir)*" />
+            <ExcelLevels Include="Resources\Excel\Levels.xlsx" />
+            <ExcelFamilies Include="Resources\Excel\Families\*" />
+            <ExcelLocation Include="Resources\Excel\Location\*" />
+            <RevitFamItem Include="Resources\Families\*.rfa" />
+            <RevitTBItem Include="Resources\Families\Titleblocks\*.rfa" />            
         </ItemGroup>
 
         <PropertyGroup>
             <RootDir>bin\AddIn $(RevitVersion) $(Configuration)\</RootDir>
             <AddinDir>$(RootDir)$(AssemblyName)\</AddinDir>
+
         </PropertyGroup>
 
         <Copy SourceFiles="@(RootItem)" DestinationFolder="$(RootDir)" />
