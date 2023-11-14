@@ -12,7 +12,7 @@
 2. Beams
 3. Walls
 4. Isolated Footings
-5. Slaps
+5. Slabs
 6. Piles (Consider Importing the Family first using Family Creator Part of Plugin)
 
 "Excel Files Needed to Place Elements are included in the plugin"
