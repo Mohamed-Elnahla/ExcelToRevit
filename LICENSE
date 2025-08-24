@@ -1,0 +1,122 @@
+# Mohamed Elnahla Non‑Commercial Research License (MENCRL)
+
+**Version 1.0  –  23 May 2025**
+
+Copyright © 2024‑2025 Mohamed Elnahla. All Rights Reserved.
+
+---
+
+## 1  Definitions
+
+1.1 **“Software”** means the source code, object code, binaries, models, documentation, examples and any related materials that are distributed with this license.
+
+1.2 **“Derivative Work”** means any modification of, adaptation of, or work based upon the Software, including any translation, abridgement, or other form in which the Software may be recast, transformed, or adapted.
+
+1.3 **“Non‑Commercial Use”** means any use that (a) is undertaken primarily for the purposes of academic study, education or not‑for‑profit scientific research, and (b) for which neither the Licensee nor any third party receives direct or indirect compensation, monetary or otherwise, including but not limited to licence fees, service fees, advertising revenue, or the sale of data or models incorporating the Software.
+
+1.4 **“Commercial Use”** means any use that does not qualify as Non‑Commercial Use, including but not limited to use in connection with any commercial, industrial or profit‑generating activity.
+
+1.5 **“Licensee”** ("you") means any individual or legal entity exercising rights under this License.
+
+1.6 **“Licensor”** means Mohamed Elnahla, the owner of all intellectual‑property rights in and to the Software.
+
+---
+
+## 2  Grant of License
+
+Subject to compliance with the terms and conditions of this License, Licensor hereby grants Licensee a worldwide, royalty‑free, non‑exclusive, non‑transferable and non‑sublicensable licence to:
+
+(a) **Use** the Software for Non‑Commercial Use;
+
+(b) **Reproduce** the Software and make copies for Non‑Commercial Use;
+
+(c) **Modify** the Software and create Derivative Works for Non‑Commercial Use;
+
+(d) **Distribute** the unmodified Software or Derivative Works to third parties, provided all conditions of §3 are met.
+
+No rights are granted to Licensee under any trademark, trade name, or service mark of Licensor.
+
+---
+
+## 3  Conditions
+
+3.1 **Attribution.** All copies of the Software and Derivative Works, in source or binary form, must retain the following (or substantially similar) notice, prominently displayed in the user‑visible portions of such works and in all associated publications:
+
+```
+© 2024‑2025 Mohamed Elnahla – Licensed for non‑commercial research under MENCRL v1.0
+```
+
+3.2 **License Notice.** A complete, unaltered copy of this License must accompany any distribution of the Software or a Derivative Work.
+
+3.3 **Non‑Commercial Limitation.** The rights granted in §2 may be exercised **only** for Non‑Commercial Use. **Commercial Use is prohibited** without a separate, written agreement with Licensor.
+
+3.4 **Copyleft Option.** If you publicly distribute a Derivative Work, you must do so only (i) under this License, or (ii) under a licence whose terms impose at least the same non‑commercial restriction and attribution obligation contained herein.
+
+3.5 **No Endorsement.** You may not use the name, likeness, or trademarks of Licensor to endorse or promote any product without prior written permission.
+
+3.6 **Compliance With Laws.** You must comply with all applicable export‑control, data‑protection and privacy laws in connection with your use of the Software.
+
+---
+
+## 4  Patent Grant
+
+Subject to the terms and conditions of this License, Licensor hereby grants to Licensee a perpetual, worldwide, non‑exclusive, royalty‑free licence to make, have made, use, offer to sell, sell, import and otherwise transfer the Software, solely to the extent that any such activity would infringe one or more claims of a patent owned or controlled by Licensor that are embodied in the Software.  This patent licence terminates automatically if Licensee initiates litigation asserting that the Software or a Derivative Work directly or indirectly infringes a patent.
+
+---
+
+## 5  Restrictions
+
+Except as expressly permitted under this License or applicable law, Licensee shall not:
+
+- engage in Commercial Use of the Software or a Derivative Work;
+- remove or alter any copyright, patent, trademark or attribution notice;
+- grant a sub‑licence of the Software; or
+- use the Software for, or in connection with, any unlawful purpose.
+
+---
+
+## 6  Term and Termination
+
+This License is effective upon your acceptance by exercising any rights granted herein and shall continue unless terminated.
+
+Licensor may terminate this License automatically upon written notice if you breach any provision of this License and fail to cure such breach within 30 days of notice.  Upon termination, you must cease all use, reproduction, modification, and distribution of the Software and destroy all copies in your possession or control.
+
+The provisions of §§3–8 survive termination.
+
+---
+
+## 7  Disclaimer of Warranty
+
+THE SOFTWARE IS PROVIDED **“AS IS”** WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING, WITHOUT LIMITATION, ANY WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, TITLE OR NON‑INFRINGEMENT.
+
+---
+
+## 8  Limitation of Liability
+
+IN NO EVENT SHALL LICENSOR OR COPYRIGHT HOLDERS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THE SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+---
+
+## 9  Governing Law and Jurisdiction
+
+This License shall be governed by and construed in accordance with **the laws of the Arab Republic of Egypt**.
+
+Any dispute that cannot be resolved amicably between the parties shall be submitted to **the exclusive jurisdiction of the Economic Court of Cairo (Primary Level)**, or any successor court having competent jurisdiction.  Nothing in this clause prevents the parties from **agreeing in writing to submit a dispute to arbitration administered by the Cairo Regional Centre for International Commercial Arbitration (CRCICA)** in accordance with its rules then in force.
+
+---
+
+## 10  Severability  Severability
+
+If any provision of this License is held to be unenforceable by a court of competent jurisdiction, the remaining provisions shall remain in full force and effect.
+
+---
+
+## 11  Entire Agreement
+
+This License constitutes the entire agreement between the parties with respect to the Software and supersedes all prior or contemporaneous agreements or understandings, whether written or oral, relating to its subject matter.
+
+---
+
+## 12  Commercial Licensing Contact
+
+For Commercial Use or any use not expressly permitted herein, please contact **Mohamed Elnahla** at [eng.mohamed.elnahla@gmail.com](mailto:eng.mohamed.elnahla@gmail.com) to obtain a separate written license.
